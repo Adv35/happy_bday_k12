@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Geburtstagskarte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.expothemes.com/fortnite-4-k/images/fortnite-4-k-windows-theme-7-hd.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; /* Enables scrolling if needed */
+            padding: 20px 0;
+        }
+
+        .card {
+            background-color: rgba(43, 45, 59, 0.9);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1.5s ease-out;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffdd00;
+            text-shadow: 0 0 20px rgba(255, 221, 0, 0.7), 0 0 30px rgba(255, 221, 0, 0.8);
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.5;
+            margin-top: 15px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .emoji {
+            font-size: 2em;
+            animation: swing 1s infinite;
+        }
+
+        .victory-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            font-family: 'Bangers', cursive;
+            font-size: 5em;
+            color: #FFD700;
+            text-align: center;
+            text-shadow: 0px 0px 20px #ffdd00, 0px 0px 40px #ffaa00;
+            animation: showMessage 1.5s ease-in-out;
+            z-index: 100;
+            opacity: 0;
+        }
+
+        .fortnite-logo {
+            width: 130px;
+            margin-top: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .button {
+            background-color: #ffdd00;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #2b2d3b;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        @keyframes showMessage {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Optimized mobile adjustments */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.1em;
+            }
+            .victory-message {
+                font-size: 3.5em;
+            }
+            .fortnite-logo {
+                width: 100px;
+            }
+            .button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="card">
+            <h1>Happy Birthday, Krishna!</h1>
+            <p>Wishing you an amazing day full of fun, laughter, and all your favorite things! May this year bring you new adventures, exciting challenges, and plenty of reasons to smile. Enjoy every moment of your special day and have the best year yet!</p>
+            <div class="emoji">🎮</div> 
+            <p> Regards, <br> Advik & Ananya </p>
+            <img src="https://purepng.com/public/uploads/large/purepng.com-fortnite-logo-black-and-whitefortnitefortnite-battle-royalegameslogos-691522709171yxrho.png" alt="Fortnite Logo" class="fortnite-logo">
+            <p>Gotta have a Victory Royale on this legendary birthday!</p>
+            <button class="button" id="startButton">XP BOOST!</button>
+        </div>
+    </div>
+
+    <div class="victory-message" id="victoryMessage">
+        XP LEVEL 12!
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            let victoryMessage = document.getElementById('victoryMessage');
+            let button = document.getElementById('startButton');
+
+            // Show XP Level message
+            victoryMessage.style.display = 'block';
+            setTimeout(() => {
+                victoryMessage.style.opacity = '1';
+                victoryMessage.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 100);
+
+            // Hide the button
+            button.style.display = 'none';
+
+            // Hide message after a few seconds
+            setTimeout(() => {
+                victoryMessage.style.opacity = '0';
+                setTimeout(() => victoryMessage.style.display = 'none', 1000);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
